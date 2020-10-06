@@ -1,0 +1,57 @@
+
+*{
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+
+}
+
+header {
+    grid-row: 1/1; 
+    grid-column: 1/3;
+    display: flex; 
+    justify-content:space-between ;
+    align-items:center ;
+
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+    
+}
+
+header ul li {
+    padding-left: 1rem;
+
+}
+
+.home-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15% 1fr;
+    
+max-width: 1000px;
+width: 90%;
+height: 100vh;
+margin:0px auto;
+}
+
+
+
+img {
+    width: 100%;
+
+}
+
+.chex-pic {
+    transform: scale (0.2);
+}
+
+.healthy {
+    grid-row: 2/2;
+}
+
+.sugar {
+    grid-row: 2/2;
+}
