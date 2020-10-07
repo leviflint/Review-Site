@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./layout.css">
-    <link rel="stylesheet" href="./style.css">
-</head>
-<header class="header">
-    <ul>
+    <link rel="stylesheet" href="./layout.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="healthy.html">Healthy Cereals</a></li>
         <li><a href="sugar.html">Sugary Cereals</a></li>
-    </ul>
-    <h1>Sugary Cereal</h1>
-</header>
-<body>
-    <div class="apple-jacks">
-        <h3>Apple Jacks</h3>
-        <img src="/images/AppleJacks.png"/>
-        <p>Apple Jacks description</p>
-        <p>Click <a href="applejacks.html"> here</a> to learn more about Apple Jacks and view product reviews.</p>
-    </div>
-    <div class="ctc">
-        <h3>Cinnamon Toast Crunch</h3>
-        <img src="/images/cinnamon-toast-crunch-box.png"/>
-        <p>Apple Jacks description</p>
-        <p>Click <a href="cintoast.html"> here</a> to learn more about Cinnamon Toast Crunch and view product reviews.</p>
-    </div>
-    <div class="fmw">
-        <h3>Frosted Mini Wheats</h3>
-        <img src="/images/frosted-mini-wheats-box.webp"/>
-        <p>Frosted Mini Wheats description</p>
-        <p>Click <a href="frosted-mini.html"> here</a> to learn more about Frosted Mini Wheats and view product reviews.</p>
-    </div>
-</body>
+      </ul>
+      <h1>Sugary Cereal</h1>
+      <form>
+        <input type="text" name="text" placeholder="Search.." />
+        <input type="submit" name="submit" value="Search" />
+      </form>
+    </header>
+    <div class="cereal-body">
+    <a href="applejacks.html">
+      <div class="apple-jacks cereal">
+        <h3 class="ribbon">Apple Jacks</h3>
+        <img src="/images/AppleJacks.png" />
+        <p class="ribbon">Click here to learn more about Apple Jacks and view product reviews.</p>
+      </div>
+    </a>
+    <a href="cintoast.html">
+      <div class="ctc cereal">
+        <h3 class="ribbon">Cinnamon Toast Crunch</h3>
+        <img src="/images/cinnamon-toast-crunch-box.png" />
+        <p class="ribbon">Click here to learn more about Cinnamon Toast Crunch and view product
+            reviews.</p>
+      </div>
+    </a>
+    <a href="frosted-mini.html">
+      <div class="fmw cereal">
+        <h3 class="ribbon">Frosted Mini Wheats</h3>
+        <img src="/images/frosted-mini-wheats-box.webp" />
+        <p class="ribbon">Click here to learn more about Frosted Mini Wheats and view product
+            reviews.</p>
+      </div>
+    </a>
+  </div>
+  </body>
 </html>

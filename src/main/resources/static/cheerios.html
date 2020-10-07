@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cheerios</title>
-    <link rel="stylesheet" href="./layout.css">
-    <link rel="stylesheet" href="./style.css">
-</head>
-<header class="header">
-    <ul>
+    <link rel="stylesheet" href="./layout.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="healthy.html">Healthy Cereals</a></li>
         <li><a href="sugar.html">Sugary Cereals</a></li>
-    </ul>
-    <h1>Cheerios Reviews</h1>
-</header>
-
-<body>
+      </ul>
+      <h1>Cheerios</h1>
+      <form>
+        <input type="text" name="text" placeholder="Search.." />
+        <input type="submit" name="submit" value="Search" />
+      </form>
+    </header>
+    <div class="cereal-page-body">
     <figure>
-        <img src="/images/cheerios-box.png" alt="Image of Cheerios box">
+      <img src="/images/cheerios-box.png" alt="Image of Cheerios box" />
     </figure>
-    <figure class="nutrition-label">
-        <img src="/images/cherrios-nutrition.png" alt="Cheerios nutrition label">
-    </figure>
-    <article>
-        This is where the description and review of Cheerios cereal will go. We will, no doubt, have a plethora of amazingly interesting thoughts to share with the world.
-    </article>
-    <form>
-        <input type="text" name="text" placeholder="Add a Hashtag">
-        <input type="submit" name="submit" value="#">
+      
+      <figure class="nutrition-label">
+        <img
+          src="/images/cherrios-nutrition.png"
+          alt="Cheerios nutrition label"
+        />
+      </figure>
+      <article>
+        Cheerios has been a family favorite for years. Its wholesome goodness is perfect for toddlers to adults and everyone in between. Made from whole grain oats, and without artificial flavors or colors, they’re naturally low in fat and cholesterol free. These wholesome little “o’s” have only one gram of sugar!
+      </article>
+      <article class="review">
+        John Doe: ★★★★ <br> Cheerios are sweet! 
+      </article>
+    <form class="hashtag-box">
+      <input type="text" name="text" placeholder="Add a Hashtag" />
+      <input type="submit" name="submit" value="#" />
     </form>
-</body>
-
+  </div>
+  </body>
 </html>
