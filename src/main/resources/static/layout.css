@@ -29,8 +29,8 @@ header ul li {
 }
 
 h1 {
-    font-size: 320%;
-    border-bottom: 10px dotted black;
+    font-size: 500%;
+    border-bottom: 10px dotted white;
     padding-bottom: 10px;
     align-self: center;
 }
@@ -54,7 +54,7 @@ img {
 .cereal img {
     object-fit: cover;
     width: 100%;
-    height: 50%;
+    height: auto;
     margin-bottom: -4px;
 }
 
@@ -117,4 +117,12 @@ article {
 .hashtag-box {
     grid-column: 2/2;
     align-self: start;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-bottom: 5%;
 }

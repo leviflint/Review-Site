@@ -21,13 +21,15 @@ ul a:hover {
 }
 
 header {
-    background-image: url(/images/header.jpg);
+    /* background-image: url(/images/header.jpg); */
     background-position: center;
     color: white;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  background-image: url(/images/image.png);
+  background-size: cover;
 }
 
 .ribbon {
@@ -42,11 +44,11 @@ p {
 h1 {
   text-shadow: 2px 2px black;
   font-family: "Medula One", cursive;
+  text-align: center;
 }
 
 ul {
   color: white;
-  background-color: var(--background);
+  background-color: rgba(124, 123, 123, 0.616);
   border-radius: 5px;
-  text-shadow: 2px 2px black;
 }
