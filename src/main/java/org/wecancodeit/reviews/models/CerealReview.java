@@ -1,4 +1,6 @@
+package org.wecancodeit.reviews.models;
 
+import org.wecancodeit.reviews.models.CerealCategory;
 
 public class CerealReview {
     private CerealCategory category;

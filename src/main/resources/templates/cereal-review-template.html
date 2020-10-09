@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apple Jacks</title>
+    <title th:text="${CerealReview.cerealName}">Apple Jacks</title>
     <link rel="stylesheet" href="./layout.css" />
     <link rel="stylesheet" href="./style.css" />
 </head>
@@ -16,7 +17,7 @@
             <li><a href="healthy.html">Healthy Cereals</a></li>
             <li><a href="sugar.html">Sugary Cereals</a></li>
         </ul>
-        <h1>Apple Jacks</h1>
+        <h1 th:text="${CerealReview.cerealName}">Apple Jacks</h1>
         <form>
             <input type="text" name="text" placeholder="Search.." />
             <input type="submit" name="submit" value="Search" />
@@ -24,17 +25,20 @@
     </header>
     <div class="cereal-page-body">
         <figure>
-            <img src="/images/AppleJacks 3D.png" alt="Image of Apple Jacks box" />
+            <img th:src="@{org.wecancodeit.reviews.models.CerealReview.boxImage}" src="/images/AppleJacks 3D.png" alt="Image of box" />
         </figure>
 
         <figure class="nutrition-label">
-            <img src="/images/apple-jacks-nutrition.png" alt="Apple Jacks nutrition label" />
+            <img th:src="@{org.wecancodeit.reviews.models.CerealReview.nutritionImage}" src="/images/apple-jacks-nutrition.png" alt="Image of nutrition label" />
         </figure>
         <div class="page-text">
-            <article>
+            <article th:text="${CerealReview.description}">
                 Apple Jacks is a crunchy, sweetened multi-grain cereal with apple and cinnamon." Apple Jacks is one of
                 the top four cereal brands marketed within stores and is most heavily marketed on Kellogg's internet
-                platform. <br> <br> John Doe: ★★★★★ <br> Apple Jacks make me jacked. <br> 
+                platform.
+            </article>
+            <article th:text="${CerealReview.review}" class="review">
+                John Doe: ★★ <br> Apple Jacks is whack!!!
             </article>
             <article class="hashtag-box">
                 <input type="text" name="text" placeholder="Add a Hashtag" />

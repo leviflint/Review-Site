@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +12,12 @@
   <body>
     <header class="header">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="healthy.html">Healthy Cereals</a></li>
-        <li><a href="sugar.html">Sugary Cereals</a></li>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li th:each= "org.wecancodeit.reviews.models.CerealCategory: ${categories}">
+          <a th:text="${CerealCategory.category}" href="healthy.html">Healthy Cereals</a>
+        </li>
       </ul>
       <h1 class="big-title">Welcome to the World of Cereals!</h1>
       <form>
@@ -23,17 +27,10 @@
     </header>
     <div class="home-body">
       <div class="healthy cereal">
-        <a href="healthy.html">
-          <h3 class="ribbon">Healthy</h3>
-          <img class="chex-pic main-pic" src="/images/rice-chex-box1.png" />
-          <p class="ribbon">To learn more about healthy cereals, click here!</p>
-        </a>
-      </div>
-      <div class="sugar cereal">
-        <a href="sugar.html">
-          <h3 class="ribbon">Sugar</h3>
-          <img class="apple-jacks-pic main-pic" src="/images/AppleJacks1.png" />
-          <p class="ribbon">To learn more about sugary cereals, click here!</p>
+        <a th:href="'/'+ ${CerealCategory.category}">
+          <h3 th:text="${CerealCategory.category}" class="ribbon">Healthy</h3>
+          <img th:src="@{CerealCatagory.categoryImage}" class="chex-pic main-pic" src="/images/rice-chex-box1.png" />
+          <p class="ribbon">To view more cereals in this category, click here!</p>
         </a>
       </div>
     </div>

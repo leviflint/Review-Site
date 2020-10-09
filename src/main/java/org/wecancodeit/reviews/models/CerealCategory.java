@@ -1,3 +1,5 @@
+package org.wecancodeit.reviews.models;
+
 import java.util.Collection;
 
 public class CerealCategory {
