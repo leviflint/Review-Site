@@ -1,6 +1,6 @@
 
 
-public class CerealPage {
+public class CerealReview {
     private CerealCategory category;
     private String cerealName;
     private String boxImage;
@@ -8,8 +8,10 @@ public class CerealPage {
     private String description;
     private String review;
     private String hashTag;
+    private long id;
 
-    public CerealPage(CerealCategory category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag) {
+
+    public CerealReview(CerealCategory category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
         this.category = category;
         this.cerealName = cerealName;
         this.boxImage = boxImage;
@@ -17,6 +19,7 @@ public class CerealPage {
         this.description = description;
         this.review = review;
         this.hashTag = hashTag;
+        this.id = id;
     }
 
     public CerealCategory getCategory() {
@@ -45,6 +48,10 @@ public class CerealPage {
 
     public String getHashTag() {
         return hashTag;
+    }
+
+    public long getId() {
+        return id;
     }
 
 }
