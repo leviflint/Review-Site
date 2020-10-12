@@ -10,7 +10,7 @@ public class CerealReview {
     private String description;
     private String review;
     private String hashTag;
-    private long id;
+
 
 
     public CerealReview(CerealCategory category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
@@ -21,7 +21,7 @@ public class CerealReview {
         this.description = description;
         this.review = review;
         this.hashTag = hashTag;
-        this.id = id;
+
     }
 
     public CerealCategory getCategory() {
@@ -52,9 +52,7 @@ public class CerealReview {
         return hashTag;
     }
 
-    public long getId() {
-        return id;
-    }
+
 
 }
 

@@ -11,9 +11,9 @@ import java.util.Collections;
 @Controller
 public class CerealReviewController {
 
-    @RequestMapping("sample-cereal-page")
+    @RequestMapping({""})
     public String showOneCerealPage(Model model){
-        CerealCategory sampleCerealCategory = new CerealCategory("Healthy", "/images/rice-chex-box1.png", Collections.EMPTY_LIST);
+        CerealCategory sampleCerealCategory = new CerealCategory("Healthy", "/images/rice-chex-box1.png", Collections.EMPTY_LIST, 1);
         CerealReview sampleCerealPage = new CerealReview(sampleCerealCategory, "Rice Chex", "/images/rice-chex-box.png", "/images/rice-chex-nutrition.png", "Description Description", "Rice Chex are cool.", "#Crispy", 1 );
 
         model.addAttribute("cerealReview", sampleCerealPage);
