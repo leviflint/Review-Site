@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:text="${CerealCategory.category} + 'Cereal'">Sugar Cereal</title>
+    <title th:text="${category.category} + 'Cereal'">Sugar Cereal</title>
     <link rel="stylesheet" href="./layout.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -22,7 +22,7 @@
         <input type="submit" name="submit" value="Search" />
       </form>
     </header>
-    <div class="cereal-body">
+    <div th:each class="cereal-body">
       <a th:href="'category/'+ ${CerealReview.id}">
       <div class="apple-jacks cereal">
         <h3 th:text="${CerealReview.cerealName}" class="ribbon">Apple Jacks</h3>

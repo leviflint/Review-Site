@@ -1,9 +1,7 @@
 package org.wecancodeit.reviews.models;
 
-import org.wecancodeit.reviews.models.CerealCategory;
-
-public class CerealReview {
-    private CerealCategory category;
+public class Review {
+    private Category category;
     private String cerealName;
     private String boxImage;
     private String nutritionImage;
@@ -13,7 +11,7 @@ public class CerealReview {
 
 
 
-    public CerealReview(CerealCategory category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
+    public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
         this.category = category;
         this.cerealName = cerealName;
         this.boxImage = boxImage;
@@ -24,7 +22,7 @@ public class CerealReview {
 
     }
 
-    public CerealCategory getCategory() {
+    public Category getCategory() {
         return category;
     }
 

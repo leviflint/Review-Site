@@ -2,13 +2,13 @@ package org.wecancodeit.reviews.models;
 
 import java.util.Collection;
 
-public class CerealCategory {
+public class Category {
     private String category;
     private String categoryImage;
-    private Collection<CerealReview> cereals;
+    private Collection<Review> cereals;
     private long id;
 
-    public CerealCategory(String category, String categoryImage, Collection<CerealReview> cereals, long id) {
+    public Category(String category, String categoryImage, Collection<Review> cereals, long id) {
         this.category = category;
         this.categoryImage = categoryImage;
         this.cereals = cereals;
@@ -23,7 +23,7 @@ public class CerealCategory {
         return categoryImage;
     }
 
-    public Collection<CerealReview> getCereals() {
+    public Collection<Review> getCereals() {
         return cereals;
     }
 
