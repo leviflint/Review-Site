@@ -12,21 +12,19 @@
   <body>
     <header class="header">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="healthy.html">Healthy Cereals</a></li>
-        <li><a href="sugar.html">Sugary Cereals</a></li>
+        <li><a href="/">Home</a></li>
       </ul>
-      <h1 th:text="${CerealCategory.category} + 'Cereal'">Sugary Cereal</h1>
+      <h1 th:text="${category.category} + 'Cereal'">Sugary Cereal</h1>
       <form>
         <input type="text" name="text" placeholder="Search.." />
         <input type="submit" name="submit" value="Search" />
       </form>
     </header>
-    <div th:each class="cereal-body">
-      <a th:href="'category/'+ ${CerealReview.id}">
+    <div th:each="review: ${category.cereals}" class="cereal-body">
+      <a th:href="'category/'+ ${review.id}">
       <div class="apple-jacks cereal">
-        <h3 th:text="${CerealReview.cerealName}" class="ribbon">Apple Jacks</h3>
-        <img th:src="@{org.wecancodeit.reviews.models.CerealReview.boxImage}" src="/images/AppleJacks 3D.png"/>
+        <h3 th:text="${review.cerealName}" class="ribbon">Apple Jacks</h3>
+        <img th:src="@{${'/images/AppleJacks 3D.png'}}"/>
         <p class="ribbon">Click here to learn more and view product reviews.</p>
       </div>
     </a>

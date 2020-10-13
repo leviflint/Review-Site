@@ -8,7 +8,7 @@ public class Review {
     private String description;
     private String review;
     private String hashTag;
-
+    private long id;
 
 
     public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
@@ -20,6 +20,11 @@ public class Review {
         this.review = review;
         this.hashTag = hashTag;
 
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public Category getCategory() {

@@ -13,7 +13,7 @@
     <header class="header">
       <ul>
         <li>
-          <a href="index.html">Home</a>
+        <li><a href="/">Home</a></li>
         </li>
         <li th:each= "category : ${categories}">
           <a th:text="${category.category}" href="healthy.html">Healthy Cereals</a>
@@ -29,7 +29,7 @@
       <div th:each= "category : ${categories}" class="healthy cereal">
         <a th:href="'/'+ ${category.category}">
           <h3 th:text="${category.category}" class="ribbon">Healthy</h3>
-          <img th:src="@{category.categoryImage}" class="chex-pic main-pic" src="/images/rice-chex-box1.png" />
+          <img class="chex-pic main-pic" src="/images/rice-chex-box1.png" />
           <p class="ribbon">To view more cereals in this category, click here!</p>
         </a>
       </div>

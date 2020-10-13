@@ -28,16 +28,17 @@ public class CategoryController {
         categoryList.put(sugar.getId(), sugar);
     }
 
-    @RequestMapping("categories")
+    @RequestMapping("/categories/{id}")
     public String displaySingleCategory(Model model, @PathVariable Long id) {
+
         model.addAttribute("category", categoryList.get(id));
         return "category-template";
     }
 
-    @RequestMapping("category/{id}")
-    public String displaySingleReview(Model model, @PathVariable Long id) {
-        model.addAttribute("category", categoryList.get(id));
-        return "review-template";
-    }
+////    @RequestMapping("category/{id}")
+//    public String displaySingleReview(Model model, @PathVariable Long id) {
+//        model.addAttribute("category", categoryList.get(id));
+//        return "review-template";
+//    }
 }
 

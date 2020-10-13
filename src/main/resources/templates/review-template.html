@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:text="${CerealReview.cerealName}">Apple Jacks</title>
+    <title th:text="${cerealReview.cerealName}">Apple Jacks</title>
     <link rel="stylesheet" href="./layout.css" />
     <link rel="stylesheet" href="./style.css" />
 </head>
@@ -13,11 +13,9 @@
 <body>
     <header class="header">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="healthy.html">Healthy Cereals</a></li>
-            <li><a href="sugar.html">Sugary Cereals</a></li>
+            <li><a href="/">Home</a></li>
         </ul>
-        <h1 th:text="${CerealReview.cerealName}">Apple Jacks</h1>
+        <h1 th:text="${cerealReview.cerealName}">Apple Jacks</h1>
         <form>
             <input type="text" name="text" placeholder="Search.." />
             <input type="submit" name="submit" value="Search" />
@@ -25,19 +23,19 @@
     </header>
     <div class="cereal-page-body">
         <figure>
-            <img th:src="@{org.wecancodeit.reviews.models.CerealReview.boxImage}" src="/images/AppleJacks 3D.png" alt="Image of box" />
+            <img th:src="@{org.wecancodeit.reviews.models.review.boxImage}" src="/images/AppleJacks 3D.png" alt="Image of box" />
         </figure>
 
         <figure class="nutrition-label">
-            <img th:src="@{org.wecancodeit.reviews.models.CerealReview.nutritionImage}" src="/images/apple-jacks-nutrition.png" alt="Image of nutrition label" />
+            <img th:src="@{org.wecancodeit.reviews.models.review.nutritionImage}" src="/images/apple-jacks-nutrition.png" alt="Image of nutrition label" />
         </figure>
         <div class="page-text">
-            <article th:text="${CerealReview.description}">
+            <article th:text="${cerealReview.description}">
                 Apple Jacks is a crunchy, sweetened multi-grain cereal with apple and cinnamon." Apple Jacks is one of
                 the top four cereal brands marketed within stores and is most heavily marketed on Kellogg's internet
                 platform.
             </article>
-            <article th:text="${CerealReview.review}" class="review">
+            <article th:text="${cerealReview.review}" class="review">
                 John Doe: ★★ <br> Apple Jacks is whack!!!
             </article>
             <article class="hashtag-box">

@@ -11,7 +11,7 @@ import java.util.*;
 public class HomePageController{
 
     @RequestMapping("")
-    public String displayCerealCategoryPage (Model model) {
+    public String displayHomePage (Model model) {
         Category healthy = new Category("healthy", "/images/rice-chex-box1.png", Collections.emptyList(), 1);
         Category sugar = new Category("sugar", "/images/AppleJacks 3D.png", Collections.emptyList(), 1);
         Collection<Category> categories = List.of(healthy, sugar);
