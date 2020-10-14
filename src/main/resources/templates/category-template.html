@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:text="${category.category} + 'Cereal'">Sugar Cereal</title>
+    <title th:text="${categories.type} + 'Cereal'">Sugar Cereal</title>
     <link rel="stylesheet" href="./layout.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -14,14 +14,14 @@
       <ul>
         <li><a href="/">Home</a></li>
       </ul>
-      <h1 th:text="${category.category} + 'Cereal'">Sugary Cereal</h1>
+      <h1 th:text="${categories.type} + 'Cereal'">Sugary Cereal</h1>
       <form>
         <input type="text" name="text" placeholder="Search.." />
         <input type="submit" name="submit" value="Search" />
       </form>
     </header>
-    <div th:each="review: ${category.cereals}" class="cereal-body">
-      <a th:href="'category/'+ ${review.id}">
+    <div th:each="review: ${categories.cereals}" class="cereal-body">
+      <a th:href="'/review/'+ ${review.getId()}">
       <div class="apple-jacks cereal">
         <h3 th:text="${review.cerealName}" class="ribbon">Apple Jacks</h3>
         <img th:src="@{${'/images/AppleJacks 3D.png'}}"/>

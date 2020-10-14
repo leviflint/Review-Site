@@ -3,20 +3,20 @@ package org.wecancodeit.reviews.models;
 import java.util.Collection;
 
 public class Category {
-    private String category;
+    private String type;
     private String categoryImage;
     private Collection<Review> cereals;
     private long id;
 
-    public Category(String category, String categoryImage, Collection<Review> cereals, long id) {
-        this.category = category;
+    public Category(String type, String categoryImage, Collection<Review> cereals, long id) {
+        this.type = type;
         this.categoryImage = categoryImage;
         this.cereals = cereals;
         this.id = id;
     }
 
-    public String getCategory() {
-        return category;
+    public String getType() {
+        return type;
     }
 
     public String getCategoryImage() {

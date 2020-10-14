@@ -19,7 +19,6 @@ public class Review {
         this.description = description;
         this.review = review;
         this.hashTag = hashTag;
-
         this.id = id;
     }
 

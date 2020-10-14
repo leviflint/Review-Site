@@ -22,8 +22,8 @@
     </header>
     <div class="home-body">
       <div th:each= "category : ${categories}" class="healthy cereal">
-        <a th:href="'/'+ ${category.category}">
-          <h3 th:text="${category.category}" class="ribbon">Healthy</h3>
+        <a th:href="'/categories/'+ ${category.getId()}">
+          <h3 th:text="${category.type}" class="ribbon">Healthy</h3>
           <img class="chex-pic main-pic" src="/images/rice-chex-box1.png" />
           <p class="ribbon">To view more cereals in this category, click here!</p>
         </a>
