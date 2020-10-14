@@ -1,18 +1,33 @@
 package org.wecancodeit.reviews.models;
 
+import javax.annotation.processing.Generated;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Collection;
 
+@Entity
 public class Category {
+    @Id
+    @GeneratedValue
+
+    private long id;
     private String type;
     private String categoryImage;
+    @OneToMany(mappedBy="category")
     private Collection<Review> cereals;
-    private long id;
+
 
     public Category(String type, String categoryImage, Collection<Review> cereals, long id) {
         this.type = type;
         this.categoryImage = categoryImage;
         this.cereals = cereals;
         this.id = id;
+    }
+
+    protected Category() {
+
     }
 
     public String getType() {

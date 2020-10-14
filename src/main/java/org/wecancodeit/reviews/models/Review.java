@@ -1,6 +1,13 @@
 package org.wecancodeit.reviews.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Review {
+    @Id
+    @GeneratedValue
+    private long id;
+    @ManyToOne
     private Category category;
     private String cerealName;
     private String boxImage;
@@ -8,7 +15,7 @@ public class Review {
     private String description;
     private String review;
     private String hashTag;
-    private long id;
+
 
 
     public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
@@ -21,6 +28,8 @@ public class Review {
         this.hashTag = hashTag;
         this.id = id;
     }
+
+    protected Review(){}
 
     public long getId() {
         return id;
