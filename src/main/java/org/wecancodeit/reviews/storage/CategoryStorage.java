@@ -2,27 +2,24 @@ package org.wecancodeit.reviews.storage;
 
 import org.springframework.stereotype.Service;
 import org.wecancodeit.reviews.models.Category;
-import org.wecancodeit.reviews.models.Review;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class CategoryStorage {
-    Map<Long, Category> categoryList = new HashMap<>();
 
-    public CategoryStorage(){
+
+    private CategoryRepository categoryRepo;
+
+    public CategoryStorage(CategoryRepository categoryRepo){
+        this.categoryRepo = categoryRepo;
     }
 
     public void addCategory(Category categoryToAdd) {
-        categoryList.put(categoryToAdd.getId(), categoryToAdd);
+        categoryRepo.save( categoryToAdd);
     }
-    public Collection<Category> retrieveAllCategories(){
-        return categoryList.values();
+    public Iterable<Category> retrieveAllCategories(){
+        return categoryRepo.findAll();
     }
     public Category retrieveCategoryById(Long id){
-        return categoryList.get(id);
+        return categoryRepo.findById(id).get();
     }
 }

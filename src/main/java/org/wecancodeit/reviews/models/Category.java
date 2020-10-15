@@ -1,6 +1,5 @@
 package org.wecancodeit.reviews.models;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,7 +10,6 @@ import java.util.Collection;
 public class Category {
     @Id
     @GeneratedValue
-
     private long id;
     private String type;
     private String categoryImage;
@@ -19,15 +17,12 @@ public class Category {
     private Collection<Review> cereals;
 
 
-    public Category(String type, String categoryImage, Collection<Review> cereals, long id) {
+    public Category(String type, String categoryImage) {
         this.type = type;
         this.categoryImage = categoryImage;
-        this.cereals = cereals;
-        this.id = id;
     }
 
     protected Category() {
-
     }
 
     public String getType() {

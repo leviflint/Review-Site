@@ -18,7 +18,7 @@ public class Review {
 
 
 
-    public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag, long id) {
+    public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag) {
         this.category = category;
         this.cerealName = cerealName;
         this.boxImage = boxImage;
@@ -26,7 +26,6 @@ public class Review {
         this.description = description;
         this.review = review;
         this.hashTag = hashTag;
-        this.id = id;
     }
 
     protected Review(){}
