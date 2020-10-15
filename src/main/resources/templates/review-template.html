@@ -6,8 +6,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${reviews.cerealName}">Apple Jacks</title>
-    <link rel="stylesheet" href="./layout.css" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/layout.css" />
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -23,11 +23,11 @@
     </header>
     <div class="cereal-page-body">
         <figure>
-            <img th:src="@{org.wecancodeit.reviews.models.review.boxImage}" src="/images/AppleJacks 3D.png" alt="Image of box" />
+            <img th:src="@{org.wecancodeit.reviews.models.review.boxImage}" src="/templates/images/AppleJacks 3D.png" alt="Image of box" />
         </figure>
 
         <figure class="nutrition-label">
-            <img th:src="@{org.wecancodeit.reviews.models.review.nutritionImage}" src="/images/apple-jacks-nutrition.png" alt="Image of nutrition label" />
+            <img th:src="@{org.wecancodeit.reviews.models.review.nutritionImage}" src="/templates/images/apple-jacks-nutrition.png" alt="Image of nutrition label" />
         </figure>
         <div class="page-text">
             <article th:text="${reviews.description}">

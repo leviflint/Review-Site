@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${categories.type} + 'Cereal'">Sugar Cereal</title>
-    <link rel="stylesheet" href="./layout.css" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/layout.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
@@ -20,7 +20,8 @@
         <input type="submit" name="submit" value="Search" />
       </form>
     </header>
-    <div th:each="review: ${categories.cereals}" class="cereal-body">
+    <div class="cereal-body">
+    <div th:each="review: ${categories.cereals}" >
       <a th:href="'/review/'+ ${review.getId()}">
       <div class="apple-jacks cereal">
         <h3 th:text="${review.cerealName}" class="ribbon">Apple Jacks</h3>
@@ -29,5 +30,6 @@
       </div>
     </a>
   </div>
+    </div>
   </body>
 </html>
