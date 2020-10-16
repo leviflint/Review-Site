@@ -30,13 +30,13 @@ public class Populator implements CommandLineRunner {
         categoryStorage.addCategory(sugar);
 
 
-        reviewStorage.addReview(new Review(healthy, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy"));
-        reviewStorage.addReview(new Review(healthy, "Cheerios", "/images/Cheerios.png", "/images/Cherrios-nutrition.png", "Description Description", "Cheerios make me cheery.", "#Cheery"));
-        reviewStorage.addReview(new Review(healthy, "Special K", "/images/Special K.png", "/images/special-k-nutrition.png", "Description Description", "Special K is the most special cereal EVAR", "#Special"));
+        reviewStorage.addReview(new Review(healthy, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF."));
+        reviewStorage.addReview(new Review(healthy, "Cheerios", "/images/Cheerios.png", "/images/Cherrios-nutrition.png", "Description Description", "Cheerios make me cheery."));
+        reviewStorage.addReview(new Review(healthy, "Special K", "/images/Special K.png", "/images/special-k-nutrition.png", "Description Description", "Special K is the most special cereal EVAR"));
 
-        reviewStorage.addReview(new Review(sugar, "Apple Jacks", "/images/Apple Jacks.png", "/images/Apple Jacks-nutrition.png", "Description Description", "Apple Jacks make me JaCkEd!", "#JackedBro"));
-        reviewStorage.addReview(new Review(sugar, "Cinnamon Toast Crunch", "/images/Cinnamon Toast Crunch.png", "/images/Cinnamon Toast Crunch-nutrition.png", "Description Description", "Cinna-MON to the cinna-MAX", "#MaximumCinnamon"));
-        reviewStorage.addReview(new Review(sugar, "Frosted Mini Wheats", "/images/frosted-mini-wheats-box.png", "/images/Frosted Mini Wheats-nutrition.png", "Description Description", "Mini wheats but MEGA flavor", "#MightyWheats"));
+        reviewStorage.addReview(new Review(sugar, "Apple Jacks", "/images/Apple Jacks.png", "/images/Apple Jacks-nutrition.png", "Description Description", "Apple Jacks make me JaCkEd!"));
+        reviewStorage.addReview(new Review(sugar, "Cinnamon Toast Crunch", "/images/Cinnamon Toast Crunch.png", "/images/Cinnamon Toast Crunch-nutrition.png", "Description Description", "Cinna-MON to the cinna-MAX"));
+        reviewStorage.addReview(new Review(sugar, "Frosted Mini Wheats", "/images/frosted-mini-wheats-box.png", "/images/Frosted Mini Wheats-nutrition.png", "Description Description", "Mini wheats but MEGA flavor"));
 
     }
 }

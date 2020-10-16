@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.wecancodeit.reviews.models.Category;
-import org.wecancodeit.reviews.models.HashTag;
+import org.wecancodeit.reviews.models.Hashtag;
 import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryRepository;
 import org.wecancodeit.reviews.storage.HashTagRepository;
@@ -33,8 +33,8 @@ public class JPAWiringTest {
     public void categoryHasManyReviewsAndReviewsHaveOneCategory () {
         Category testCategory = new Category("healthy", "/images/pic.jpg");
         categoryRepo.save(testCategory);
-        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy");
-        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.", "#Meh");
+        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.");
+        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.");
         reviewRepo.save(testReview1);
         reviewRepo.save(testReview2);
         testEntityManager.flush();
@@ -48,19 +48,21 @@ public class JPAWiringTest {
     public void reviewHasManyHashTagsAndHashTagsHaveManyReviews(){
         Category testCategory = new Category("healthy", "/images.png");
         categoryRepo.save(testCategory);
-        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy");
-        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.", "#Meh");
+        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.");
+        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.");
         reviewRepo.save(testReview1);
         reviewRepo.save(testReview2);
-        HashTag testHashTag1 = new HashTag("#Crispy", testReview1, testReview2);
-        HashTag testHashTag2 = new HashTag("#BurgerWanted", testReview1);
-        HashTag testHashTag3 = new HashTag("#Unnecessary", testReview1, testReview2);
+        Hashtag testHashTag1 = new Hashtag("#Crispy", testReview1, testReview2);
+        Hashtag testHashTag2 = new Hashtag("#BurgerWanted", testReview1);
+        Hashtag testHashTag3 = new Hashtag("#Unnecessary", testReview1, testReview2);
         hashTagRepo.save(testHashTag1);
         hashTagRepo.save(testHashTag2);
         hashTagRepo.save(testHashTag3);
         testEntityManager.flush();
         testEntityManager.clear();
-
-
+        Review retrievedReview1 = reviewRepo.findById(testReview1.getId()).get();
+        Review retrievedReview2 = reviewRepo.findById(testReview2.getId()).get();
+        assertThat(retrievedReview1.getHashtag()).contains(testHashTag1, testHashTag2, testHashTag3);
+        assertThat(retrievedReview2.getHashtag()).contains(testHashTag1, testHashTag3);
     }
 }

@@ -5,13 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
 
 @Entity
-public class HashTag {
+public class Hashtag {
 
     @Id
     @GeneratedValue
@@ -20,10 +19,10 @@ public class HashTag {
     @ManyToMany
     private Collection<Review> reviews;
 
-    protected HashTag() {
+    protected Hashtag() {
     }
 
-    public HashTag(String name, Review...reviews) {
+    public Hashtag(String name, Review...reviews) {
         this.name = name;
         this.reviews= List.of(reviews);
     }
@@ -42,7 +41,7 @@ public class HashTag {
 
     @Override
     public String toString() {
-        return "HashTag{" +
+        return "Hashtag{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
@@ -52,9 +51,9 @@ public class HashTag {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        HashTag hashTag = (HashTag) o;
-        return id == hashTag.id &&
-                Objects.equals(name, hashTag.name);
+        Hashtag hashtag = (Hashtag) o;
+        return id == hashtag.id &&
+                Objects.equals(name, hashtag.name);
     }
 
     @Override

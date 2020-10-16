@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -15,18 +16,18 @@ public class Review {
     private String nutritionImage;
     private String description;
     private String review;
-    private String hashTag;
+    @ManyToMany(mappedBy = "reviews")
+    private Collection<Hashtag> hashtag;
 
 
 
-    public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review, String hashTag) {
+    public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review) {
         this.category = category;
         this.cerealName = cerealName;
         this.boxImage = boxImage;
         this.nutritionImage = nutritionImage;
         this.description = description;
         this.review = review;
-        this.hashTag = hashTag;
     }
 
     protected Review(){}
@@ -59,8 +60,8 @@ public class Review {
         return review;
     }
 
-    public String getHashTag() {
-        return hashTag;
+    public Collection<Hashtag> getHashtag() {
+        return hashtag;
     }
 
     @Override
@@ -73,7 +74,6 @@ public class Review {
                 ", nutritionImage='" + nutritionImage + '\'' +
                 ", description='" + description + '\'' +
                 ", review='" + review + '\'' +
-                ", hashTag='" + hashTag + '\'' +
                 '}';
     }
 
@@ -88,13 +88,12 @@ public class Review {
                 Objects.equals(boxImage, review1.boxImage) &&
                 Objects.equals(nutritionImage, review1.nutritionImage) &&
                 Objects.equals(description, review1.description) &&
-                Objects.equals(review, review1.review) &&
-                Objects.equals(hashTag, review1.hashTag);
+                Objects.equals(review, review1.review);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, category, cerealName, boxImage, nutritionImage, description, review, hashTag);
+        return Objects.hash(id, category, cerealName, boxImage, nutritionImage, description, review);
     }
 }
 
