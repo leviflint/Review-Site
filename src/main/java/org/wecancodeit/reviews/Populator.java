@@ -4,8 +4,10 @@ package org.wecancodeit.reviews;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.reviews.models.Category;
+import org.wecancodeit.reviews.models.Hashtag;
 import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryStorage;
+import org.wecancodeit.reviews.storage.HashTagRepository;
 import org.wecancodeit.reviews.storage.ReviewStorage;
 
 @Component
@@ -13,10 +15,12 @@ public class Populator implements CommandLineRunner {
 
     private CategoryStorage categoryStorage;
     private ReviewStorage reviewStorage;
+    private HashTagRepository hashtagRepo;
 
-    public Populator(CategoryStorage categoryStorage, ReviewStorage reviewStorage){
+    public Populator(CategoryStorage categoryStorage, ReviewStorage reviewStorage, HashTagRepository hashtagRepo){
         this.categoryStorage = categoryStorage;
         this.reviewStorage = reviewStorage;
+        this.hashtagRepo = hashtagRepo;
     }
 
 
@@ -36,7 +40,14 @@ public class Populator implements CommandLineRunner {
 
         reviewStorage.addReview(new Review(sugar, "Apple Jacks", "/images/Apple Jacks.png", "/images/Apple Jacks-nutrition.png", "Description Description", "Apple Jacks make me JaCkEd!"));
         reviewStorage.addReview(new Review(sugar, "Cinnamon Toast Crunch", "/images/Cinnamon Toast Crunch.png", "/images/Cinnamon Toast Crunch-nutrition.png", "Description Description", "Cinna-MON to the cinna-MAX"));
-        reviewStorage.addReview(new Review(sugar, "Frosted Mini Wheats", "/images/frosted-mini-wheats-box.png", "/images/Frosted Mini Wheats-nutrition.png", "Description Description", "Mini wheats but MEGA flavor"));
+       // reviewStorage.addReview(new Review(sugar, "Frosted Mini Wheats", "/images/frosted-mini-wheats-box.png", "/images/Frosted Mini Wheats-nutrition.png", "Description Description", "Mini wheats but MEGA flavor"));
+
+        Review reviewToAdd1 = new Review(sugar,"Frosted Mini Wheats", "/images/frosted-mini-wheats-box.png", "/images/Frosted Mini Wheats-nutrition.png", "Description Description", "Mini wheats but MEGA flavor");
+        reviewStorage.addReview(reviewToAdd1);
+
+        hashtagRepo.save(new Hashtag("#Jacked", reviewToAdd1));
+
+
 
     }
 }
