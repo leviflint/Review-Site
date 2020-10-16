@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body>
+<body th:each= "review : ${reviews}">
     <header class="header">
         <ul>
             <li><a href="/">Home</a></li>
@@ -23,11 +23,11 @@
     </header>
     <div class="cereal-page-body">
         <figure>
-            <img th:src="@{org.wecancodeit.reviews.models.review.boxImage}" src="/templates/images/AppleJacks 3D.png" alt="Image of box" />
+            <img th:src="'/images/'+ ${review.cerealName} + '.png'" src="/templates/images/AppleJacks 3D.png" alt="Image of box" />
         </figure>
 
         <figure class="nutrition-label">
-            <img th:src="@{org.wecancodeit.reviews.models.review.nutritionImage}" src="/templates/images/apple-jacks-nutrition.png" alt="Image of nutrition label" />
+            <img th:src="'/images/'+ ${review.cerealName} + '-nutrition.png'"  alt="Image of nutrition label" />
         </figure>
         <div class="page-text">
             <article th:text="${reviews.description}">

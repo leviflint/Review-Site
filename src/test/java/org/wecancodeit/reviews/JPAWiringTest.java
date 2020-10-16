@@ -33,8 +33,8 @@ public class JPAWiringTest {
     public void categoryHasManyReviewsAndReviewsHaveOneCategory () {
         Category testCategory = new Category("healthy", "/images/pic.jpg");
         categoryRepo.save(testCategory);
-        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/rice-chex-box.png", "/images/rice-chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy");
-        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/rice-chex-box.png", "/images/rice-chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.", "#Meh");
+        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy");
+        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.", "#Meh");
         reviewRepo.save(testReview1);
         reviewRepo.save(testReview2);
         testEntityManager.flush();
@@ -48,8 +48,8 @@ public class JPAWiringTest {
     public void reviewHasManyHashTagsAndHashTagsHaveManyReviews(){
         Category testCategory = new Category("healthy", "/images.png");
         categoryRepo.save(testCategory);
-        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/rice-chex-box.png", "/images/rice-chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy");
-        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/rice-chex-box.png", "/images/rice-chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.", "#Meh");
+        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.", "#Crispy");
+        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.", "#Meh");
         reviewRepo.save(testReview1);
         reviewRepo.save(testReview2);
         HashTag testHashTag1 = new HashTag("#Crispy", testReview1, testReview2);

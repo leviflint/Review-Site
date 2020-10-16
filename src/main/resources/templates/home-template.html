@@ -23,12 +23,14 @@
     <div class="home-body">
       <div th:each= "category : ${categories}" class="healthy cereal">
         <a th:href="'/categories/'+ ${category.getId()}">
-          <h3 th:text="${category.type}" class="ribbon">Healthy</h3>
-          <img class="chex-pic main-pic" src="/images/rice-chex-box1.png" />
+          <h3 th:text="${category.type}" class="ribbon">Category</h3>
+          <img class="main-pic" th:src="'/images/'+ ${category.type} + '.png'" alt="Photo of Cereal"/>
           <p class="ribbon">To view more cereals in this category, click here!</p>
         </a>
       </div>
     </div>
+
+
     <footer>&copy; Cap'n'Coders 2020</footer>
   </body>
 </html>
