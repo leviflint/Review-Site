@@ -3,6 +3,7 @@ package org.wecancodeit.reviews.models;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Review {
@@ -17,7 +18,7 @@ public class Review {
     private String description;
     private String review;
     @ManyToMany(mappedBy = "reviews")
-    private Collection<Hashtag> hashtag;
+    private Set<Hashtag> hashtag;
 
 
 

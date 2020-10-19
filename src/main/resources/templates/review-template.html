@@ -38,11 +38,12 @@
             <article th:text="${reviews.review}" class="review">
                 John Doe: ★★ <br> Apple Jacks is whack!!!
             </article>
-            <article th:each="hashtag: ${reviews.hashtag}" class="hashtag-box">
-                <input type="text" name="hashtag" placeholder="Add a Hashtag" />
-                <input type="submit" name="submit" value="Add" />
-                <p th:text="${hashtag.name}">Hashtaggy</p>
-            </article>
+            <form th:action="'/review/'+${reviews.id}" method="post">
+                <label for="hashtag-name-input">New Hashtag Name</label>
+                <input type="text" name="hashtagName" id="hashtag-name-input">
+                <button type="submit">Submit new Hashtag</button>
+            </form>
+            <p th:each="hashtag: ${reviews.hashtag}" th:text="${hashtag.name}">Hashtaggy</p>
         </div>
     </div>
     <footer>&copy; Cap'n'Coders 2020</footer>

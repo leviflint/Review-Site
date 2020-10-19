@@ -55,6 +55,7 @@ ul {
 .page-text {
     background-color: rgba(124, 123, 123, 0.616);
     border-radius: 5px;
+    padding: 10px;
 
 }
 
@@ -62,4 +63,9 @@ footer {
   font-family: "Medula One", cursive;
   text-align: center;
   color: white; 
+}
+
+.hashtag-body li {
+  list-style-type: none;
+  padding: 10px;
 }

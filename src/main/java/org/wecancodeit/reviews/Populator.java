@@ -46,6 +46,7 @@ public class Populator implements CommandLineRunner {
         reviewStorage.addReview(reviewToAdd1);
 
         hashtagRepo.save(new Hashtag("#Jacked", reviewToAdd1));
+        hashtagRepo.save(new Hashtag("#Awesome!!!",reviewToAdd1));
 
 
 

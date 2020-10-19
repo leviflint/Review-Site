@@ -47,6 +47,13 @@ h1 {
     justify-content: center;
 }
 
+.hashtag-body {
+    display: grid;
+    place-self: center;
+    width: 50%;
+    margin: 0px auto;
+}
+
 img {
     width: 100%;
 }

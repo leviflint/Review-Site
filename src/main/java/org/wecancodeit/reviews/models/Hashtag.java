@@ -60,4 +60,8 @@ public class Hashtag {
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
+    public void addReview(Review reviewToAdd) {
+        reviews.add(reviewToAdd);
+    }
 }
