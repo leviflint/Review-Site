@@ -13,7 +13,8 @@
 <body th:each= "review : ${reviews}">
     <header class="header">
         <ul>
-            <li><a href="/">Home</a></li>
+            <li class="nav"><a href="/">Home</a></li>
+            <li class="nav"><a href="/hashtags">Hashtags</a></li>
         </ul>
         <h1 th:each= "review : ${reviews}" th:text="${reviews.cerealName}">Apple Jacks</h1>
         <form>

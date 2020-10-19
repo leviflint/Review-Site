@@ -24,16 +24,17 @@
       <div class="hashtag">
           <h3 class="ribbon">Hashtags</h3>
           <article>
+            <form action="/hashtags" method="post">
+              <label for="hashtag-name-input"></label>
+              <input  value="Add New Hashtag" type="text" name="hashtagName" id="hashtag-name-input">
+              <button type="submit">Submit</button>
+            </form>
             <ul >
               <li th:each= "hashtag : ${hashtags}" th:text="${hashtag.name}"></li>
             </ul>
           </article>
           <p class="ribbon">Click to see which reviews contain each hashtag!</p>
-        <form action="/hashtags" method="post">
-          <label for="hashtag-name-input">New Hashtag Name</label>
-          <input type="text" name="hashtagName" id="hashtag-name-input">
-          <button type="submit">Submit new Hashtag</button>
-        </form>
+
       </div>
     </div>
 

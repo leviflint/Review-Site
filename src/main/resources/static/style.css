@@ -8,7 +8,7 @@ a:link {
   text-decoration: none;
 }
 
-a:visited, a header:visited {
+a,  a:visited, a header:visited {
   text-decoration: none;
   color: white;
 }
@@ -46,7 +46,7 @@ h1 {
   text-align: center;
 }
 
-ul {
+ul, article{
   color: white;
   background-color: rgba(124, 123, 123, 0.616);
   border-radius: 5px;
