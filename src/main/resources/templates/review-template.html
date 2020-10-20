@@ -45,6 +45,16 @@
                 <button type="submit">Submit</button>
             </form>
             <p th:each="hashtag: ${reviews.hashtag}" th:text="${hashtag.name}">Hashtaggy</p>
+            <article>
+                <form th:action="'/review/'+${reviews.id}" method="post">
+                    <label for="comments-input"></label>
+                    <input  placeholder="Add New Comment" type="text" comment="commentText" id="comments-input">
+                    <button type="submit">Submit</button>
+                </form>
+                <ul >
+                    <li th:each= "comment : ${comments}" th:text="${comment.comment}"></li>
+                </ul>
+            </article>
         </div>
     </div>
     <footer>&copy; Cap'n'Coders 2020</footer>

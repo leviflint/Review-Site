@@ -1,9 +1,11 @@
 package org.wecancodeit.reviews.controllers;
 
+import org.attoparser.dom.Comment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.reviews.models.Hashtag;
+import org.wecancodeit.reviews.storage.CommentStorage;
 import org.wecancodeit.reviews.storage.HashtagStorage;
 import org.wecancodeit.reviews.storage.ReviewStorage;
 
@@ -11,10 +13,12 @@ import org.wecancodeit.reviews.storage.ReviewStorage;
 public class ReviewController {
     private ReviewStorage reviewStorage;
     private HashtagStorage hashtagStorage;
+    private CommentStorage commentStorage;
 
-    public ReviewController(ReviewStorage reviewStorage, HashtagStorage hashtagStorage) {
+    public ReviewController(ReviewStorage reviewStorage, HashtagStorage hashtagStorage, CommentStorage commentStorage) {
         this.reviewStorage = reviewStorage;
         this.hashtagStorage = hashtagStorage;
+        this.commentStorage = commentStorage;
     }
 
     @GetMapping({"/review/{id}"})
@@ -37,5 +41,18 @@ public class ReviewController {
         System.out.println("Hey, Made it!");
         return "redirect:/review/{id}";
     }
+
+//    @RequestMapping(method = RequestMethod.POST, value= {"/review/{id}"}, params = {"commentText"} )
+//    public String addCommentToReview(@RequestParam String commentText, @PathVariable long id) {
+//
+//        Comment commentToAdd = new Comment(commentText);
+//
+//        commentStorage.addComment(commentToAdd);
+//        return "redirect:/review/{id}";
+//    }
+//
+
+
+
 }
 //move method to hashtag storage or review storage

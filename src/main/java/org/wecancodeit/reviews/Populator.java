@@ -1,12 +1,15 @@
 package org.wecancodeit.reviews;
 
 
+import org.attoparser.dom.Comment;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.reviews.models.Category;
+import org.wecancodeit.reviews.models.Comments;
 import org.wecancodeit.reviews.models.Hashtag;
 import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryStorage;
+import org.wecancodeit.reviews.storage.CommentRepository;
 import org.wecancodeit.reviews.storage.HashTagRepository;
 import org.wecancodeit.reviews.storage.ReviewStorage;
 
@@ -16,11 +19,14 @@ public class Populator implements CommandLineRunner {
     private CategoryStorage categoryStorage;
     private ReviewStorage reviewStorage;
     private HashTagRepository hashtagRepo;
+    private CommentRepository commentRepo;
 
-    public Populator(CategoryStorage categoryStorage, ReviewStorage reviewStorage, HashTagRepository hashtagRepo){
+    public Populator(CategoryStorage categoryStorage, ReviewStorage reviewStorage, HashTagRepository hashtagRepo, CommentRepository commentRepo){
         this.categoryStorage = categoryStorage;
         this.reviewStorage = reviewStorage;
         this.hashtagRepo = hashtagRepo;
+        this.commentRepo = commentRepo;
+
     }
 
 
@@ -47,6 +53,9 @@ public class Populator implements CommandLineRunner {
 
         hashtagRepo.save(new Hashtag("#Jacked", reviewToAdd1));
         hashtagRepo.save(new Hashtag("#Awesome!!!",reviewToAdd1));
+
+        commentRepo.save(new Comments("Mr Smith", " Really Good!", reviewToAdd1));
+
 
 
 

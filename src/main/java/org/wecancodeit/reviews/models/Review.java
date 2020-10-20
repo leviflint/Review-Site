@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews.models;
 
 import javax.persistence.*;
+import javax.xml.stream.events.Comment;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
@@ -19,7 +20,8 @@ public class Review {
     private String review;
     @ManyToMany(mappedBy = "reviews")
     private Set<Hashtag> hashtag;
-
+    @ManyToMany(mappedBy = "reviews")
+    private Collection<Comments> comments;
 
 
     public Review(Category category, String cerealName, String boxImage, String nutritionImage, String description, String review) {
@@ -64,6 +66,11 @@ public class Review {
     public Collection<Hashtag> getHashtag() {
         return hashtag;
     }
+
+    public Collection<Comments> getComments() {
+        return comments;
+    }
+
 
     @Override
     public String toString() {
