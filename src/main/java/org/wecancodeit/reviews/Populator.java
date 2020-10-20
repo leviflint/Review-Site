@@ -35,7 +35,7 @@ public class Populator implements CommandLineRunner {
 
 
         reviewStorage.addReview(new Review(healthy, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF."));
-        reviewStorage.addReview(new Review(healthy, "Cheerios", "/images/Cheerios.png", "/images/Cherrios-nutrition.png", "Description Description", "Cheerios make me cheery."));
+        reviewStorage.addReview(new Review(healthy, "Cheerios", "/images/Cheerios.png", "/images/Cheerios-nutrition.png", "Description Description", "Cheerios make me cheery."));
         reviewStorage.addReview(new Review(healthy, "Special K", "/images/Special K.png", "/images/special-k-nutrition.png", "Description Description", "Special K is the most special cereal EVAR"));
 
         reviewStorage.addReview(new Review(sugar, "Apple Jacks", "/images/Apple Jacks.png", "/images/Apple Jacks-nutrition.png", "Description Description", "Apple Jacks make me JaCkEd!"));

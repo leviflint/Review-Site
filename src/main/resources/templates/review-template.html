@@ -12,7 +12,7 @@
 
 <body th:each= "review : ${reviews}">
     <header class="header">
-        <ul>
+        <ul class="nav-bar">
             <li class="nav"><a href="/">Home</a></li>
             <li class="nav"><a href="/hashtags">Hashtags</a></li>
         </ul>
@@ -40,9 +40,9 @@
                 John Doe: ★★ <br> Apple Jacks is whack!!!
             </article>
             <form th:action="'/review/'+${reviews.id}" method="post">
-                <label for="hashtag-name-input">New Hashtag Name</label>
-                <input type="text" name="hashtagName" id="hashtag-name-input">
-                <button type="submit">Submit new Hashtag</button>
+                <label for="hashtag-name-input"></label>
+                <input placeholder="Add New Hashtag" type="text" name="hashtagName" id="hashtag-name-input">
+                <button type="submit">Submit</button>
             </form>
             <p th:each="hashtag: ${reviews.hashtag}" th:text="${hashtag.name}">Hashtaggy</p>
         </div>

@@ -31,7 +31,7 @@ body {
   background-size: cover;
 }
 
-.ribbon {
+.ribbon, .nav-bar {
   background-color: var(--background);
 }
 
@@ -47,13 +47,11 @@ h1 {
 }
 
 ul, article{
-  color: white;
-  background-color: rgba(124, 123, 123, 0.616);
   border-radius: 5px;
 }
 
 .page-text {
-    background-color: rgba(124, 123, 123, 0.616);
+    background-color: var(--background);
     border-radius: 5px;
     padding: 10px;
 
@@ -69,3 +67,4 @@ footer {
   list-style-type: none;
   padding: 10px;
 }
+
