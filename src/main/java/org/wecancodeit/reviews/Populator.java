@@ -57,7 +57,5 @@ public class Populator implements CommandLineRunner {
         commentRepo.save(new Comments("Mr Smith", " Really Good!", reviewToAdd1));
 
 
-
-
     }
 }

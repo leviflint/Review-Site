@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.wecancodeit.reviews.models.Category;
+import org.wecancodeit.reviews.models.Comments;
 import org.wecancodeit.reviews.models.Hashtag;
 import org.wecancodeit.reviews.models.Review;
 import org.wecancodeit.reviews.storage.CategoryRepository;
+import org.wecancodeit.reviews.storage.CommentRepository;
 import org.wecancodeit.reviews.storage.HashTagRepository;
 import org.wecancodeit.reviews.storage.ReviewRepository;
 
@@ -28,6 +30,9 @@ public class JPAWiringTest {
 
     @Autowired
     private HashTagRepository hashTagRepo;
+
+    @Autowired
+    private CommentRepository commentRepo;
 
     @Test
     public void categoryHasManyReviewsAndReviewsHaveOneCategory () {
@@ -64,5 +69,24 @@ public class JPAWiringTest {
         Review retrievedReview2 = reviewRepo.findById(testReview2.getId()).get();
         assertThat(retrievedReview1.getHashtag()).contains(testHashTag1, testHashTag2, testHashTag3);
         assertThat(retrievedReview2.getHashtag()).contains(testHashTag1, testHashTag3);
+    }
+
+    @Test
+    public void reviewHasManyCommentsAndCommentsCanHaveManyReviews(){
+        Category testCategory = new Category("healthy", "/images.png");
+        categoryRepo.save(testCategory);
+        Review testReview1 = new Review(testCategory, "Rice Chex", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Rice Chex are crispy AF.");
+        Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.");
+        reviewRepo.save(testReview1);
+        reviewRepo.save(testReview2);
+        Comments testComment1 = new Comments("Reba McEntire", "Dang ole tasty", testReview1);
+        Comments testComment2 = new Comments("Bob Dole", "YeeHaw", testReview1);
+        Comments testComment3 = new Comments("Indiana Jones", "Temple of Doom is the best movie", testReview2);
+        testEntityManager.flush();
+        testEntityManager.clear();
+        Review retrievedReview1 = reviewRepo.findById(testReview1.getId()).get();
+        Review retrievedReview2 = reviewRepo.findById(testReview2.getId()).get();
+        assertThat(retrievedReview1.getComments()).contains(testComment1, testComment2);
+        assertThat(retrievedReview2.getComments()).contains(testComment2);
     }
 }

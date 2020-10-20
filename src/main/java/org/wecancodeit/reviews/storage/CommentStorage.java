@@ -3,6 +3,7 @@ package org.wecancodeit.reviews.storage;
 
 import org.attoparser.dom.Comment;
 import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.models.Comments;
 
 @Service
 public class CommentStorage {
@@ -13,12 +14,12 @@ public class CommentStorage {
         this.commentRepo=commentRepo;
     }
 
-    public void addComment(Comment commentToAdd){
+    public void addComment(Comments commentToAdd){
         commentRepo.save(commentToAdd);
 
     }
 
-    public Iterable <Comment> retrieveAllComments(){
+    public Iterable <Comments> retrieveAllComments(){
         return commentRepo.findAll();
     }
 
