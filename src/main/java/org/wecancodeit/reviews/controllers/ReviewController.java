@@ -1,9 +1,9 @@
 package org.wecancodeit.reviews.controllers;
 
-import org.attoparser.dom.Comment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.wecancodeit.reviews.models.Comments;
 import org.wecancodeit.reviews.models.Hashtag;
 import org.wecancodeit.reviews.storage.CommentStorage;
 import org.wecancodeit.reviews.storage.HashtagStorage;
@@ -42,6 +42,12 @@ public class ReviewController {
         return "redirect:/review/{id}";
     }
 
+//    @PostMapping({"/review/{id}"})
+//    public String addCommentToReview(@RequestParam String commentText, @PathVariable long id) {
+//        Comments commentToAdd = new Comments(commentText, reviewStorage.retrieveReviewById(id));
+//        commentStorage.addComment(commentToAdd);
+//        return "redirect:/review/{id}";
+//    }
 
 
 

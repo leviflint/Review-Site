@@ -21,8 +21,10 @@ public class CommentController {
 
     @RequestMapping(method = RequestMethod.POST, value= {"/review/{id}"}, params = {"commentText"} )
     public String addCommentToReview(@RequestParam String commentText, @PathVariable long id) {
-        Comments commentToAdd = new Comments("Barbara", commentText , reviewStorage.retrieveReviewById(id)) ;
+        Comments commentToAdd = new Comments( commentText , reviewStorage.retrieveReviewById(id)) ;
         commentStorage.addComment(commentToAdd);
         return "redirect:/review/{id}";
-    }
+   }
+
+
 }

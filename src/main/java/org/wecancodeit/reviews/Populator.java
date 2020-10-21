@@ -1,7 +1,6 @@
 package org.wecancodeit.reviews;
 
 
-import org.attoparser.dom.Comment;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.reviews.models.Category;
@@ -54,7 +53,7 @@ public class Populator implements CommandLineRunner {
         hashtagRepo.save(new Hashtag("#Jacked", reviewToAdd1));
         hashtagRepo.save(new Hashtag("#Awesome!!!",reviewToAdd1));
 
-        commentRepo.save(new Comments("Mr Smith", " Really Good!", reviewToAdd1));
+        commentRepo.save(new Comments(" Really Good!", reviewToAdd1));
 
 
     }

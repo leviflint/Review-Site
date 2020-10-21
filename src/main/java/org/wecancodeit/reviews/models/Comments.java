@@ -13,7 +13,6 @@ public class Comments {
     @Id
     @GeneratedValue
     private long id;
-    private String author;
     private String comment;
     @ManyToMany
     private Collection<Review> reviews;
@@ -22,8 +21,7 @@ public class Comments {
     protected Comments() {
     }
 
-    public Comments(String author, String comment, Review...reviews) {
-        this.author = author;
+    public Comments(String comment, Review... reviews) {
         this.reviews = List.of(reviews);
         this.comment = comment;
     }
@@ -36,9 +34,6 @@ public class Comments {
         return comment;
     }
 
-    public String getAuthor() {
-        return author;
-    }
 
     public Collection<Review> getReviews() {
         return reviews;
@@ -48,7 +43,6 @@ public class Comments {
     public String toString() {
         return "Comments{" +
                 "id=" + id +
-                ", author='" + author + '\'' +
                 ", comment='" + comment + '\'' +
                 '}';
     }
@@ -59,13 +53,12 @@ public class Comments {
         if (o == null || getClass() != o.getClass()) return false;
         Comments comments = (Comments) o;
         return id == comments.id &&
-                author.equals(comments.author) &&
                 comment.equals(comments.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, author, comment);
+        return Objects.hash(id, comment);
     }
 }
 
