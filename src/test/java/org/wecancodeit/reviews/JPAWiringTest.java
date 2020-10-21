@@ -79,8 +79,8 @@ public class JPAWiringTest {
         Review testReview2 = new Review(testCategory, "Raisin Bran", "/images/Rice Chex.png", "/images/Rice Chex-nutrition.png", "Description Description", "Raisin Bran is okay I guess.");
         reviewRepo.save(testReview1);
         reviewRepo.save(testReview2);
-        Comments testComment1 = new Comments("Dang ole tasty", testReview1);
-        Comments testComment2 = new Comments("YeeHaw", testReview2);
+        Comments testComment1 = new Comments("Tony","Dang ole tasty", testReview1);
+        Comments testComment2 = new Comments("Muhammed","YeeHaw", testReview2);
         commentRepo.save(testComment1);
         commentRepo.save(testComment2);
         testEntityManager.flush();

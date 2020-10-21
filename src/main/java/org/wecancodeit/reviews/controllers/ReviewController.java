@@ -42,9 +42,9 @@ public class ReviewController {
         return "redirect:/review/{id}";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value= {"/review/{id}"},  params = {"commentText"} )
-    public String addCommentToReview(@RequestParam String commentText, @PathVariable long id) {
-        Comments commentToAdd = new Comments(commentText, reviewStorage.retrieveReviewById(id));
+    @RequestMapping(method = RequestMethod.POST, value= {"/review/{id}"},  params = {"authorText", "commentText"} )
+    public String addCommentToReview(@RequestParam String authorText, String commentText, @PathVariable long id) {
+        Comments commentToAdd = new Comments(authorText, commentText, reviewStorage.retrieveReviewById(id));
         commentStorage.addComment(commentToAdd);
         return "redirect:/review/{id}";
     }
