@@ -80,13 +80,14 @@ public class JPAWiringTest {
         reviewRepo.save(testReview1);
         reviewRepo.save(testReview2);
         Comments testComment1 = new Comments("Reba McEntire", "Dang ole tasty", testReview1);
-        Comments testComment2 = new Comments("Bob Dole", "YeeHaw", testReview1);
-        Comments testComment3 = new Comments("Indiana Jones", "Temple of Doom is the best movie", testReview2);
+        Comments testComment2 = new Comments("Bob Dole", "YeeHaw", testReview2);
+        commentRepo.save(testComment1);
+        commentRepo.save(testComment2);
         testEntityManager.flush();
         testEntityManager.clear();
         Review retrievedReview1 = reviewRepo.findById(testReview1.getId()).get();
         Review retrievedReview2 = reviewRepo.findById(testReview2.getId()).get();
-        assertThat(retrievedReview1.getComments()).contains(testComment1, testComment2);
+        assertThat(retrievedReview1.getComments()).contains(testComment1);
         assertThat(retrievedReview2.getComments()).contains(testComment2);
     }
 }

@@ -39,6 +39,7 @@
             <article th:text="${reviews.review}" class="review">
                 John Doe: ★★ <br> Apple Jacks is whack!!!
             </article>
+
             <form th:action="'/review/'+${reviews.id}" method="post">
                 <label for="hashtag-name-input"></label>
                 <input placeholder="Add New Hashtag" type="text" name="hashtagName" id="hashtag-name-input">
@@ -46,13 +47,14 @@
             </form>
             <p th:each="hashtag: ${reviews.hashtag}" th:text="${hashtag.name}">Hashtaggy</p>
             <article>
+
                 <form th:action="'/review/'+${reviews.id}" method="post">
                     <label for="comments-input"></label>
                     <input  placeholder="Add New Comment" type="text" comment="commentText" id="comments-input">
                     <button type="submit">Submit</button>
                 </form>
                 <ul >
-                    <li th:each= "comment : ${comments}" th:text="${comment.comment}"></li>
+                    <li th:each= "comment : ${reviews.comments}" th:text="${comment.comment}"></li>
                 </ul>
             </article>
         </div>
