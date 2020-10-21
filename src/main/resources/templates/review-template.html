@@ -49,6 +49,10 @@
 
             <article>
                 <form th:action="'/review/'+${reviews.id}" method="post" th:object="${reviews.comments}">
+                    <label for="comments-input"></label>
+                    <label for="author-input"></label>
+                    <input  placeholder="Your Name" type="text" name="authorText" id="author-input">
+                    <input  placeholder="Add New Comment" type="text" name="commentText" id="comments-input">
                     <div class="stars">
                         <input id="star-5" value="★★★★★" type="radio" name="rating"/>
                         <label for="star-5"></label>
@@ -61,10 +65,6 @@
                         <input id="star-1" value="★" type="radio" name="rating"/>
                         <label for="star-1"></label>
                     </div>
-                    <label for="comments-input"></label>
-                    <label for="author-input"></label>
-                    <input  placeholder="Your Name" type="text" name="authorText" id="author-input">
-                    <input  placeholder="Add New Comment" type="text" name="commentText" id="comments-input">
                     <button type="submit">Submit</button>
                 </form>
                     <p th:each= "comment : ${reviews.comments}" th:text="${comment.author} + ':   ' + ${comment.comment} + ${comment.rating}"></p>
