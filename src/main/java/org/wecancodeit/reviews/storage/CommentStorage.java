@@ -16,7 +16,6 @@ public class CommentStorage {
 
     public void addComment(Comments commentToAdd){
         commentRepo.save(commentToAdd);
-
     }
 
     public Iterable <Comments> retrieveAllComments(){

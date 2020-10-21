@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body th:each= "review : ${reviews}">
+<body >
     <header class="header">
         <ul class="nav-bar">
             <li class="nav"><a href="/">Home</a></li>
             <li class="nav"><a href="/hashtags">Hashtags</a></li>
         </ul>
-        <h1 th:each= "review : ${reviews}" th:text="${reviews.cerealName}">Apple Jacks</h1>
+        <h1  th:text="${reviews.cerealName}">Apple Jacks</h1>
         <form>
             <input type="text" name="text" placeholder="Search.." />
             <input type="submit" name="submit" value="Search" />
@@ -24,11 +24,11 @@
     </header>
     <div class="cereal-page-body">
         <figure>
-            <img th:src="'/images/'+ ${review.cerealName} + '.png'" src="/templates/images/AppleJacks 3D.png" alt="Image of box" />
+            <img th:src="'/images/'+ ${reviews.cerealName} + '.png'" src="/templates/images/AppleJacks 3D.png" alt="Image of box" />
         </figure>
 
         <figure class="nutrition-label">
-            <img th:src="'/images/'+ ${review.cerealName} + '-nutrition.png'"  alt="Image of nutrition label" />
+            <img th:src="'/images/'+ ${reviews.cerealName} + '-nutrition.png'"  alt="Image of nutrition label" />
         </figure>
         <div class="page-text">
             <article th:text="${reviews.description}">
@@ -46,17 +46,16 @@
                 <button type="submit">Submit</button>
             </form>
             <p th:each="hashtag: ${reviews.hashtag}" th:text="${hashtag.name}">Hashtaggy</p>
-            <article>
 
-                <form th:action="'/review/'+${reviews.id}" method="post">
+            <article>
+                <form th:action="'/review/'+${reviews.id}" method="post" th:object="${reviews.comments}">
                     <label for="comments-input"></label>
-                    <input  placeholder="Add New Comment" type="text" comment="commentText" id="comments-input">
+                    <input  placeholder="Add New Comment" type="text" name="commentText" id="comments-input">
                     <button type="submit">Submit</button>
                 </form>
-                <ul >
-                    <li th:each= "comment : ${reviews.comments}" th:text="${comment.comment}"></li>
-                </ul>
+                    <p th:each= "comment : ${reviews.comments}" th:text="${comment.comment}"></p>
             </article>
+
         </div>
     </div>
     <footer>&copy; Cap'n'Coders 2020</footer>
