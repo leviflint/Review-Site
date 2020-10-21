@@ -15,6 +15,7 @@ public class Comments {
     private long id;
 
     private String comment;
+    private String rating;
     private String author;
     @ManyToMany
     private Collection<Review> reviews;
@@ -23,7 +24,8 @@ public class Comments {
     protected Comments() {
     }
 
-    public Comments(String author, String comment, Review... reviews) {
+    public Comments(String rating, String comment, String author, Review... reviews) {
+        this.rating = rating;
         this.author = author;
         this.reviews = List.of(reviews);
         this.comment = comment;
@@ -41,6 +43,9 @@ public class Comments {
         return author;
     }
 
+    public String getRating() {
+        return rating;
+    }
 
     public Collection<Review> getReviews() {
         return reviews;
@@ -52,13 +57,14 @@ public class Comments {
         if (o == null || getClass() != o.getClass()) return false;
         Comments comments = (Comments) o;
         return id == comments.id &&
-                comment.equals(comments.comment) &&
-                author.equals(comments.author);
+                Objects.equals(comment, comments.comment) &&
+                Objects.equals(rating, comments.rating) &&
+                Objects.equals(author, comments.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, comment, author);
+        return Objects.hash(id, comment, rating, author);
     }
 
     @Override
@@ -66,6 +72,7 @@ public class Comments {
         return "Comments{" +
                 "id=" + id +
                 ", comment='" + comment + '\'' +
+                ", rating='" + rating + '\'' +
                 ", author='" + author + '\'' +
                 '}';
     }

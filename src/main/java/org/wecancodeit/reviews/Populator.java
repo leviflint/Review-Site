@@ -53,7 +53,7 @@ public class Populator implements CommandLineRunner {
         hashtagRepo.save(new Hashtag("#Jacked", reviewToAdd1));
         hashtagRepo.save(new Hashtag("#Awesome!!!",reviewToAdd1));
 
-        commentRepo.save(new Comments("Barbara", "Streisand", reviewToAdd1));
+        commentRepo.save(new Comments("5", "Streisand", "Barbara", reviewToAdd1));
 
 
     }
