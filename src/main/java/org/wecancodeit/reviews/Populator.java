@@ -33,7 +33,7 @@ public class Populator implements CommandLineRunner {
     public void run(String...args) throws Exception{
 
         Category healthy = new Category("Healthy", "/images/Healthy.png");
-        Category sugar = new Category("Sugar", "/images/Apple Jacks.png");
+        Category sugar = new Category("Sugary", "/images/Apple Jacks.png");
 
         categoryStorage.addCategory(healthy);
         categoryStorage.addCategory(sugar);

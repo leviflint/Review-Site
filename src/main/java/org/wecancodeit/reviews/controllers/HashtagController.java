@@ -17,6 +17,8 @@ public class HashtagController {
         this.hashtagStorage = hashtagStorage;
     }
 
+
+
     @RequestMapping("/hashtags")
     public String displayHashtagPage(Model model) {
 
@@ -27,6 +29,10 @@ public class HashtagController {
 
     @PostMapping("/hashtags")
     public String addHashtag(@RequestParam String hashtagName) {
+        if (!hashtagName.startsWith("#")) {
+            hashtagName = "#" + hashtagName;
+        } else {
+        }
         Hashtag hashtagToAdd = new Hashtag(hashtagName);
         hashtagStorage.addHashtag(hashtagToAdd);
 

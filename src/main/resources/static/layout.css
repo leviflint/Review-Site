@@ -135,6 +135,7 @@ img {
 .list{
     justify-content: start;
     justify-items: start;
+    margin-top: 25px;
 }
 
 .opinion{
@@ -192,3 +193,4 @@ h2 {
 .hashtag-title{
     margin-left: 100px;
 }
+
