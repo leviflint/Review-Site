@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title th:text="${categories.type} + 'Cereal'">Sugar Cereal</title>
+    <title th:text="${categories.type} + ' Cereal'">Sugar Cereal</title>
     <link rel="stylesheet" href="/layout.css" />
     <link rel="stylesheet" href="/style.css" />
   </head>
@@ -15,7 +15,7 @@
         <li class="nav"><a href="/">Home</a></li>
         <li class="nav"><a href="/hashtags">Hashtags</a></li>
       </ul>
-      <h1 th:text="${categories.type} + 'Cereal'">Sugary Cereal</h1>
+      <h1 th:text="${categories.type} + ' Cereal'">Sugary Cereal</h1>
       <form>
         <input type="text" name="text" placeholder="Search.." />
         <input type="submit" name="submit" value="Search" />

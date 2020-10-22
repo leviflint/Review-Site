@@ -31,6 +31,12 @@ public class ReviewController {
     }
     @PostMapping({"/review/{id}"})
     public String addHashtagToReview(@RequestParam String hashtagName, @PathVariable long id) {
+
+        if (!hashtagName.startsWith("#")) {
+            hashtagName = "#" + hashtagName;
+        } else {
+        }
+
         Hashtag hashtagToAdd = hashtagStorage.retrieveHashtagByName(hashtagName);
         if(hashtagToAdd == null){
             hashtagToAdd = new Hashtag(hashtagName, reviewStorage.retrieveReviewById(id));

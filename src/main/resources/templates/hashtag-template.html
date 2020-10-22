@@ -14,7 +14,7 @@
       <ul class="nav-bar">
         <li><a href="/">Home</a></li>
       </ul>
-      <h1 class="big-title">Welcome to the World of Hashtags!</h1>
+      <h1 class="big-title hashtag-title">Welcome to the World of Hashtags!</h1>
       <form>
         <input type="text" name="text" placeholder="Search.." />
         <input type="submit" name="submit" value="Search" />
@@ -29,11 +29,11 @@
               <input  placeholder="Add New Hashtag" type="text" name="hashtagName" id="hashtag-name-input">
               <button type="submit">Submit</button>
             </form>
-            <ul >
+            <ul class="hashtag-list" >
               <li th:each= "hashtag : ${hashtags}" th:text="${hashtag.name}"></li>
             </ul>
           </article>
-          <p class="ribbon">Click to see which reviews contain each hashtag!</p>
+          <p class="ribbon"></p>
 
       </div>
     </div>

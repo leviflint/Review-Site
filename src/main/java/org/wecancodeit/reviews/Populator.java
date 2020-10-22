@@ -66,11 +66,11 @@ public class Populator implements CommandLineRunner {
 
 
         commentRepo.save(new Comments("★★", "I always dreamed I found the perfect cereal, but it turned out to be like every other box.", "Barbara Streisand", reviewToAdd1));
-        commentRepo.save(new Comments("★★", "It's a Me! Eating Cheerios!", "Mario", reviewToAdd2));
-        commentRepo.save(new Comments("★★", "Special K. Why does it always have to be Special K?!", "Indiana Jones", reviewToAdd3));
-        commentRepo.save(new Comments("★★", "Cereal, uh, finds a way.", "Dr. Ian Malcolm", reviewToAdd4));
-        commentRepo.save(new Comments("★★", "Snap into some Apple Jacks - Oh YEAH.", "Macho Man", reviewToAdd5));
-        commentRepo.save(new Comments("★★", "I'mma let you finish, but Frosted Mini Wheats had the best flavor of ALL TIME.", "Kanye West", reviewToAdd6));
+        commentRepo.save(new Comments("★★★", "It's a Me! Eating Cheerios!", "Mario", reviewToAdd2));
+        commentRepo.save(new Comments("★", "Special K. Why does it always have to be Special K?!", "Indiana Jones", reviewToAdd3));
+        commentRepo.save(new Comments("★★★★", "Cereal, uh, finds a way.", "Dr. Ian Malcolm", reviewToAdd5));
+        commentRepo.save(new Comments("★★★★★", "Snap into some Apple Jacks - Oh YEAH.", "Macho Man", reviewToAdd4));
+        commentRepo.save(new Comments("★★★★★", "I'mma let you finish, but Frosted Mini Wheats had the best flavor of ALL TIME.", "Kanye West", reviewToAdd6));
 
     }
 }

@@ -47,6 +47,31 @@ h1 {
     justify-content: center;
 }
 
+.cereal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 1200px;
+    width: 90%;
+    height: 100vh;
+    margin: 0px auto;
+    column-gap: 10%;
+    justify-content: center;
+}
+
+.cereal-page-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;
+    column-gap: 10%;
+    row-gap: 5%;
+    justify-content: center;
+    margin-top: 10%;
+}
+
 .hashtag-body {
     display: grid;
     place-self: center;
@@ -86,31 +111,50 @@ img {
     justify-content: center;
 }
 
-.cereal-body {
+
+.opinion-section{
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     max-width: 1200px;
     width: 90%;
-    height: 100vh;
     margin: 0px auto;
-    column-gap: 10%;
-    justify-content: center;
-}
+    justify-content: space-around;
 
-.cereal-page-body {
+}
+.opinions{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
-    max-width: 1000px;
+    grid-column: 1/-1;
+    max-width: 1200px;
     width: 90%;
-    height: 100vh;
     margin: 0px auto;
-    column-gap: 10%;
-    row-gap: 5%;
-    justify-content: center;
-    margin-top: 10%;
+    justify-content: space-around;
+    justify-items: start;
+}
 
+.list{
+    justify-content: start;
+    justify-items: start;
+}
+
+.opinion{
+    align-content: start;
+}
+.forms{
+    place-content: center;
+}
+
+.hashtags{
+    grid-column: 1 / span 1;
+
+}
+
+.hashtags-display{
+    justify-items: left;
+}
+
+.comments{
+    grid-column: 2 / span 1;
 }
 
 article {
@@ -118,9 +162,13 @@ article {
 }
 
 
- .hashtag-box {
+.hashtag-box {
     margin-top: 30px;
     margin-bottom: 10px;
+}
+.hashtag-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 footer {
@@ -136,7 +184,11 @@ footer {
 
 
 }
-
-.review {
-    padding-top: 25px;
+h2 {
+    display: grid;
+    padding: 20px 10px;
+    justify-content: center;
+}
+.hashtag-title{
+    margin-left: 100px;
 }
