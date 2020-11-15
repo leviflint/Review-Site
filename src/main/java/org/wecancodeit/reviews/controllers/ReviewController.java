@@ -31,7 +31,6 @@ public class ReviewController {
     }
     @PostMapping({"/review/{id}"})
     public String addHashtagToReview(@RequestParam String hashtagName, @PathVariable long id) {
-
         if (!hashtagName.startsWith("#")) {
             hashtagName = "#" + hashtagName;
         } else {
@@ -44,7 +43,6 @@ public class ReviewController {
             hashtagToAdd.addReview(reviewStorage.retrieveReviewById(id));
         }
         hashtagStorage.addHashtag(hashtagToAdd);
-        System.out.println("Hey, Made it!");
         return "redirect:/review/{id}";
     }
 
